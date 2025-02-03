@@ -4,6 +4,7 @@
 # Task 15
 
 # In[1]:
+#implementation
 
 
 from pymongo import MongoClient
@@ -18,7 +19,7 @@ db = client["Group_Project2"]
 movies_collection = db["Movies"]
 users_collection = db["Users"]
 reviews_collection = db["Reviews"]
-watch_history_collection = db["WatchHistory"]     
+watch_history_collection = db["WatchHistory"]
 
 
 # In[2]:
@@ -139,17 +140,13 @@ average_execution_time = sum(execution_times) / len(execution_times)
 print(f"\nAverage Execution Time: {average_execution_time:.4f} ms")
 
 
-# ### Filter for User Preferences: 
+# ### Filter for User Preferences:
 # The code first filters users based on their preferences, selecting those who either prefer the "Comedy" genre or have notifications enabled (notifications_enabled: True).
-# ### Watch History Filtering: 
+# ### Watch History Filtering:
 # The pipeline then filters watch history to include only records where the movie was watched after January 1, 2022, on either a Smart TV or a Laptop, and the user matches the previously filtered preferences.
-# ### Movie and User Lookup: 
+# ### Movie and User Lookup:
 # The code performs two lookup operations: one to fetch movie details using the movie_id, and another to fetch the user preferences using user_id.
 # ### Condition Met Logic:
 # The final output includes a field condition_met, which checks if either the user has notifications enabled or their preferred genre is "Comedy", ensuring the condition is met for those users based on their preferences.
 
 # In[ ]:
-
-
-
-
